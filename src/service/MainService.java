@@ -102,11 +102,28 @@ public class MainService {
 		float pricef = Float.parseFloat(price);
 		System.out.println("Cena ir " + pricef + " eur");
 		int agei = Integer.parseInt("18");
-		System.out.println("Vecums ir: " + agei);
+		System.out.println("Vecums ir: " + agei);	
+		
+		
+		
+				
+		System.out.println(avg(grades));
 		
 
 		
 		
 	}
+	
+	public static float avg(int [] grades) {
+		float avg = 0;
+		
+		if (grades != null) {
+			for (int i = 0; i < grades.length ; i++) {
+			avg += grades[i];
+			}
+		}
+		return avg / (grades.length-1);
+	}
+	
 
 }
