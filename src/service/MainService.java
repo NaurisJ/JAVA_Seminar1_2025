@@ -109,6 +109,9 @@ public class MainService {
 				
 		System.out.println(avg(grades));
 		
+		String test = "Nauris Laur1s";
+		System.out.println(isFormated(test));
+		
 
 		
 		
@@ -118,12 +121,24 @@ public class MainService {
 		float avg = 0;
 		
 		if (grades != null) {
-			for (int i = 0; i < grades.length ; i++) {
-			avg += grades[i];
+			for(int temp : grades) {
+				avg += temp;
 			}
 		}
-		return avg / (grades.length-1);
+		return avg / grades.length;
 	}
+	
+	// TODO uztaisit funkciju, kas sanem STRING un atgriezis, vai atbilst varda formatejumam,
+	// pienmot, ka var butt divi vardi personai
+	
+	public static boolean isFormated(String inputName) {
+		if (inputName != null && !inputName.isEmpty()) {
+			return inputName.matches("[A-Z]{1}[a-z ]{1,10}[A-Z]{1}[a-z]{1,10}");
+		} else {
+			return false;
+		}
+	}
+	
 	
 
 }
